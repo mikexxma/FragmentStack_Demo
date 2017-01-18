@@ -25,8 +25,13 @@ namespace FragmentStackTest
 
         private void Bt1_Click(object sender, EventArgs e)
         {
-            Toast.MakeText(Activity, " i am a btn in Fragment three",
-                ToastLength.Long).Show();
+            FragmentOne fOne = new FragmentOne();
+            FragmentManager fm = FragmentManager;
+            FragmentTransaction tx = fm.BeginTransaction();
+            MainActivity.myFragments.Add(fOne);
+            tx.Replace(Resource.Id.frameLayout1, fOne, "ONE");
+            tx.AddToBackStack(null);
+            tx.Commit();
         }
     }
 }

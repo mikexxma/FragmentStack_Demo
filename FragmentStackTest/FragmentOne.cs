@@ -27,6 +27,7 @@ namespace FragmentStackTest
             FragmentTwo fTwo = new FragmentTwo();
             FragmentManager fm = FragmentManager;
             FragmentTransaction tx = fm.BeginTransaction();
+            MainActivity.myFragments.Add(fTwo);
             tx.Replace(Resource.Id.frameLayout1, fTwo, "TWO");
             tx.AddToBackStack(null);
             tx.Commit();

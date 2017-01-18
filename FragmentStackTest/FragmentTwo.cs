@@ -30,6 +30,7 @@ namespace FragmentStackTest
             FragmentTransaction tx = fm.BeginTransaction();
             //tx.Hide(this);
             //tx.Add(Resource.Id.frameLayout1, fThree, "THREE");
+            MainActivity.myFragments.Add(fThree);
             tx.Replace(Resource.Id.frameLayout1, fThree, "THREE");  
             tx.AddToBackStack(null);
             tx.Commit();
